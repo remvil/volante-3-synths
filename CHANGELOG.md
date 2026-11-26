@@ -1,5 +1,13 @@
 # Novità di Volante 3
 
+## V2.2.0 — 26/11/2026
+- Volante-3 mono, vista Mac: pannello nero in stile synth anni '70, con le sezioni da sinistra a destra e il nome sotto (Controlli, Oscillatori, Mixer, Modificatori, Uscita, Ritmo), pannello leggermente inclinato.
+- Mixer come sugli strumenti originali: interruttori colorati e livelli dei tre oscillatori spostati nel mixer (solo vista Mac).
+- Fila dei passi del sequencer sempre visibile sopra la tastiera: tocca un passo per accenderlo o spegnerlo, il LED segue il passo che suona, ▶ SEQ avvia il sequencer.
+- Banchi del mono: 5 banchi da 8 suoni (Sirene e allarmi, Inseguimenti, Solisti, Bassi, Rumori e FX) con SALVA, SALVA IN… e FABBRICA. Gli 8 suoni di prima sono nei banchi, più 32 suoni nuovi.
+- Nuovo suono "Corsa nel tunnel" (banco Inseguimenti): sequenza originale a 8 passi a 165 BPM, filtro risonante che si apre e si chiude, eco.
+- I tasti ◀ ▶ del programma sulla tastiera MIDI scorrono anche i suoni del mono.
+
 ## V2.1.0 — 26/11/2026
 - Scelta della lingua sotto ACCENDI: italiano (predefinito) o inglese. Volante ricorda la scelta.
 - In inglese si traducono tasti, manopole, sezioni e messaggi; i nomi dei suoni, dei banchi e dei giri restano in italiano.
