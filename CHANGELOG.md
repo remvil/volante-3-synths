@@ -1,5 +1,9 @@
 # Novità di Volante 3
 
+## V2.3.6 — 26/11/2026
+- Poli 8 STILE 800: Voce in colonna sul lato destro, Volume fuori dai riquadri in basso a destra (come sul Pro-800), Amplificatore con solo Attacco, Decad., Sostegno, Rilascio.
+- Le due righe del Filtro sono allineate con Oscillatore B e Poly-Mod.
+
 ## V2.3.5 — 26/11/2026
 - Poli 8: accordatura fine (Fine) anche sull'oscillatore A.
 - Oscillatori A e B con lo stesso ordine: Freq e Fine a sinistra, levette al centro, PW e Livello a destra (STILE 800), così Freq e Fine stanno nella stessa colonna.
