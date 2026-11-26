@@ -1,81 +1,85 @@
 # Volante 3
 
-Volante 3: a '70s-style synth for live playing, with mono synth, drum pad, Poli 8 and bass, all MIDI-controllable. Runs as a single HTML file in Chrome or as an installable Mac app built with Electron.
+Synth per il live in stile anni '70: quattro strumenti in una sola app, tutti suonabili da tastiere MIDI.
 
+- **Volante-3**: synth monofonico a 3 oscillatori, con banchi di suoni e fila di controlli live
+- **Drumpad**: 8 pad, 10 programmi, con vista EDIT per costruire i suoni
+- **Poli 8**: polifonico a 8 voci, con due pannelli a scelta (STILE V e STILE 800)
+- **Basso**: 20 preset e 30 giri dimostrativi
 
-Strumenti per i live della band: **Volante-3** (synth mono a 3 oscillatori), **Drumpad** (8 pad, 10 programmi), **Poli 8** (polifonico a 8 voci in stile Prophet) e **Basso** (20 preset, 30 giri dimostrativi).
+Funziona come app per Mac oppure come semplice pagina HTML aperta in Chrome.
 
-Dalla V2.0.0 Volante 3 è un'app per Mac fatta con Electron: gira con il motore di Chrome al suo interno, quindi MIDI e SysEx funzionano senza avvisi e senza dover aprire il browser.
+## Autore
 
-## Cosa c'è in questa cartella
+Ideato e sviluppato da **remvil** ([github.com/remvil](https://github.com/remvil)) per i live della sua band, con l'aiuto di Claude (Anthropic) per il codice.
+
+## Come è fatto
+
+| Parte | Tecnologia |
+|---|---|
+| Interfaccia e suoni | Un unico file `app/index.html`: HTML, CSS e JavaScript senza librerie esterne |
+| Motore audio | Web Audio API; il Poli 8 usa un AudioWorklet dedicato a 8 voci |
+| Tastiere | Web MIDI con SysEx: più tastiere insieme, ognuna assegnata a uno strumento, mappatura col learn |
+| Memoria | Suoni, banchi e mappature salvati in locale (localStorage e IndexedDB), con backup esportabile |
+| App per Mac | Electron: permessi MIDI automatici, schermo sempre acceso, registrazioni in Musica/Volante |
+| Lingue | Italiano e inglese |
+
+## Struttura
 
 | Percorso | Cosa contiene |
 |---|---|
-| `app/index.html` | Tutto Volante: interfaccia, suoni, MIDI, font e campioni incorporati. Funziona anche da solo in Chrome |
-| `main.js` | La finestra dell'app: permessi MIDI, schermo sempre acceso, registrazioni in Musica/Volante |
-| `package.json` | Nome, versione e comandi dell'app |
+| `app/index.html` | Tutto Volante: interfaccia, suoni, MIDI, font e campioni incorporati |
+| `main.js` | La finestra dell'app Electron |
+| `package.json` | Nome, versione e comandi |
 | `build/icon.png` | Icona dell'app |
-| `versioni/volante-v1.9.0-browser.html` | Ultima versione per browser (V1.9.0), da tenere come riserva |
 | `CHANGELOG.md` | Cosa cambia in ogni versione |
 
-## Prima volta sul Mac
+## Installazione
 
-1. Installa **Node.js** versione LTS da https://nodejs.org (oppure, se usi Homebrew, `brew install node`).
-2. Apri il **Terminale** ed entra nella cartella del progetto, per esempio:
-   ```
-   cd ~/Downloads/volante-app
-   ```
-3. Installa quello che serve (solo la prima volta, scarica circa 200 MB):
-   ```
-   npm install
-   ```
+### Nel browser (senza installare niente)
 
-## Provare l'app
+Apri `app/index.html` con **Google Chrome**, consenti l'accesso ai dispositivi MIDI e premi **ACCENDI**.
 
+### App per Mac
+
+Serve **Node.js** LTS (da https://nodejs.org oppure `brew install node`).
+
+```
+git clone https://github.com/remvil/volante-3-synths.git
+cd volante-3-synths
+npm install
+```
+
+Per provarla:
 ```
 npm start
 ```
 
-Si apre la finestra di Volante. Collega la tastiera MIDI prima di premere ACCENDI.
-
-## Creare l'app installabile
-
+Per creare l'app installabile:
 ```
 npm run dist
 ```
 
-Dopo qualche minuto nella cartella `dist` trovi il file `Volante 3-2.1.0-arm64.dmg` (o `-x64` sui Mac Intel). Aprilo e trascina **Volante 3** in **Applicazioni**.
+Nella cartella `dist` trovi il file `.dmg` (`-arm64` per Mac Apple Silicon, `-x64` per Mac Intel). Aprilo e trascina **Volante 3** in **Applicazioni**.
 
-L'app non è firmata con un certificato Apple. Se macOS la blocca al primo avvio, fai clic destro sull'icona › **Apri** › **Apri**: dalla volta dopo si apre normalmente.
+L'app non è firmata con un certificato Apple: al primo avvio fai clic destro sull'icona › **Apri** › **Apri**.
+
+## Uso veloce
+
+1. Collega le tastiere MIDI e apri Volante 3, poi premi **ACCENDI**.
+2. In **SUONA DA** scegli quale strumento suona ogni tastiera.
+3. Il tasto **?** mostra la mappa delle tastiere: clicca una manopola o un pad per rimapparlo.
+4. Dalla tastiera del computer: **Z** e **X** cambiano ottava.
 
 ## Dove finiscono i dati
 
-- **Suoni, banchi, mappature MIDI:** salvati dentro l'app (cartella `~/Library/Application Support/Volante 3`). Usa ⬇ ESPORTA BACKUP nel synth per averne una copia.
-- **Registrazioni (REC) e backup:** l'app propone di salvarli in **Musica/Volante**. Dal menu **Volante › Apri cartella registrazioni** la apri al volo.
-
-I suoni salvati nella versione browser non passano da soli nell'app: esporta il backup dal browser e importalo nell'app con ⬆ IMPORTA BACKUP.
+- **Suoni, banchi, mappature:** dentro l'app (`~/Library/Application Support/Volante 3`) o nel browser. Usa **⬇ ESPORTA BACKUP** per averne una copia e **⬆ IMPORTA BACKUP** per ripristinarla.
+- **Registrazioni (REC):** in **Musica/Volante**.
 
 ## Versioni
 
-`Volante 3 Vmaggiore.minore.correzione`: le correzioni piccole alzano l'ultimo numero (V2.0.1), le novità quello di mezzo (V2.1.0), un cambio completo il primo (V3.0.0).
+`Vmaggiore.minore.correzione`: le correzioni alzano l'ultimo numero, le novità quello di mezzo, un cambio completo il primo. Ogni rilascio ha il suo tag (es. `v2.4.0`); per tornare a una versione: `git checkout v2.4.0`. Le novità sono in [CHANGELOG.md](CHANGELOG.md).
 
-Cosa viene dopo: vedi [ROADMAP.md](ROADMAP.md).
+## Licenza
 
-## Come lavoriamo (rami e versioni)
-
-| Ramo | A cosa serve |
-|---|---|
-| `feature/nome-novita` | Un ramo per ogni novità, per esempio `feature/mono-ui-minimoog` |
-| `development` | Raccoglie le novità finite: è la versione da provare giorno per giorno |
-| `test` | Versione candidata da collaudare con calma, per esempio alle prove |
-| `main` | Versione da palco: ogni rilascio ha il suo tag, per esempio `v2.2.0` |
-
-Il percorso è sempre `feature/…` → `development` → `test` → `main` (+ tag).
-
-Per provare un ramo sul Mac:
-```
-git checkout development   # oppure test, oppure main
-git pull
-npm start
-```
-Per tornare a una versione precisa: `git checkout v2.1.0`.
+GNU GPL v3, vedi [LICENSE](LICENSE).
