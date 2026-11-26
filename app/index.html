@@ -548,16 +548,35 @@ button.lcd{border:0;text-align:left;cursor:pointer}
 .desk #dock .tr .msv{flex-wrap:nowrap}.desk #dock .tr #mName{width:120px}.desk #dock .tr .kbdrow .lab{display:none}
 .kbdrow .seg button{position:relative}
 .kbdrow .seg button.conn::after{content:"";position:absolute;right:4px;top:4px;width:5px;height:5px;border-radius:50%;background:#5fd46a;box-shadow:0 0 4px #5fd46a}
-.kbdrow .mpkmap.on{border-color:var(--amber)}
-.mpkwiz{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:#000a}
-.mpkwiz.show{display:flex}
-.mpkwiz .mw{background:#1b1714;border:1px solid #4a3f36;border-top:3px solid var(--amber);border-radius:8px;padding:22px 26px;min-width:340px;text-align:center;font-family:'Oswald',sans-serif;color:#e8dcc8}
-.mpkwiz b{letter-spacing:3px;color:var(--amber)}
-.mpkwiz p{font-size:20px;margin:14px 0}
-.mwd{display:grid;grid-template-columns:repeat(8,14px);gap:8px;justify-content:center;margin-bottom:16px}
-.mwd i{width:14px;height:14px;border-radius:50%;background:#3a322c}
-.mwd i.ok{background:#5fd46a}.mwd i.cur{background:var(--amber);box-shadow:0 0 8px var(--amber)}
-.mwb{display:flex;gap:10px;justify-content:center}
+.kbmap{position:fixed;inset:0;z-index:9999;display:none;overflow:auto;background:#0c0a09f2}
+.kbmap.show{display:block}
+.km{max-width:1400px;margin:0 auto;padding:22px 28px;display:flex;flex-direction:column;gap:16px;font-family:'Oswald',sans-serif;color:#efe8d8}
+.kmh{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.kmh b{font-size:20px;letter-spacing:4px;color:var(--amber)}
+#kmMsg{font-size:13px;color:#a8998a;flex:1}#kmMsg.learn{color:#ffd23a;font-size:18px;letter-spacing:1px}
+.kms{background:#1d1a18;border:1px solid #3a322c;border-radius:10px;padding:14px 16px 0;display:flex;flex-direction:column;gap:12px}
+.kmt{display:flex;align-items:baseline;gap:12px}.kmt b{font-size:16px;letter-spacing:3px}
+.kmc{font-size:12px;color:#8a7b6c}.kmc.on{color:#5fd46a}.kma{margin-left:auto;font-size:12px;letter-spacing:1px;color:#a8998a}.kma b{color:var(--amber)}
+.kmb{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}.kmcol{display:flex;flex-direction:column;gap:12px}
+.km-j{width:70px;height:70px;border-radius:50%;background:#111;box-shadow:inset 0 0 0 2px #333;display:flex;align-items:center;justify-content:center;font-size:9px;color:#a8998a;text-align:center;align-self:center}
+.kmpads{display:grid;grid-template-columns:repeat(4,80px);gap:8px}.kmpads.sl{grid-template-columns:repeat(8,80px)}
+.kmknobs{display:grid;grid-template-columns:repeat(4,86px);gap:12px 4px}.kmknobs.sl{grid-template-columns:repeat(8,86px)}
+.km-k{display:flex;flex-direction:column;align-items:center;gap:5px;background:none;border:0;color:#efe8d8;cursor:pointer;padding:4px;border-radius:8px;font-family:'Oswald',sans-serif}
+.km-k::before{content:"";width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#4a4440,#151312 70%);box-shadow:0 0 0 2px #000,0 2px 4px #000}
+.km-k{position:relative}.km-k i{position:absolute;left:14px;top:0;width:16px;height:16px;border-radius:50%;background:var(--amber);color:#1c120a;font:600 10px/16px 'IBM Plex Mono',monospace;font-style:normal}
+.km-k span{font-size:10px;letter-spacing:1px;text-align:center}
+.km-p{width:80px;height:62px;border-radius:6px;background:linear-gradient(#3a3532,#26221f);border:1px solid #000;box-shadow:inset 0 1px 0 #fff2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#7fd3ff;cursor:pointer;font-family:'Oswald',sans-serif}
+.km-p em{font:600 9px 'IBM Plex Mono',monospace;font-style:normal;color:#8a7b6c}.km-p span{font-size:11px;letter-spacing:1px}
+.kmknobs.sl .km-k,.kmpads.sl .km-p{cursor:default}
+.km-k.unm span,.km-p.unm span{color:#8a7b6c;font-style:italic}
+.km-k.learn,.km-p.learn{outline:3px solid #ffd23a;box-shadow:0 0 18px #ffd23a88;animation:kml 1s infinite}
+@keyframes kml{50%{outline-color:#ffd23a55}}
+.kmfad{display:flex}.km-f{display:flex;flex-direction:column;align-items:center;gap:4px;width:62px}
+.km-f b{width:8px;height:70px;border-radius:4px;background:#0a0908;position:relative;box-shadow:inset 0 0 0 1px #333}.km-f i{position:absolute;left:-10px;top:30px;width:28px;height:14px;border-radius:2px;background:linear-gradient(#e8dcc8,#a89e90)}
+.km-f em{font:600 9px 'IBM Plex Mono',monospace;font-style:normal;color:#8a7b6c}.km-f span{font-size:10px;color:#6a5f52}.km-f:last-child span{color:var(--amber)}
+.kmbtn{display:grid;grid-template-columns:repeat(4,90px);gap:6px}.kmbtn span{height:30px;border-radius:4px;background:#2a2522;border:1px solid #4a3f36;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1px}
+.kmnote{font-size:10px;color:#a8998a;font-style:normal}
+.kmkeys{height:60px;display:flex;background:#000;padding-top:3px;border-radius:0 0 4px 4px}.kmkeys i{flex:1;margin-right:2px;background:linear-gradient(#efe6d4,#fbf6ea);border-radius:0 0 3px 3px}
+.kml{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:#a8998a}.kml .o{color:var(--amber)}.kml .c{color:#7fd3ff}
 </style>
 </head>
 <body>
@@ -2660,7 +2679,7 @@ setTimeout(fitAll,600);document.fonts&&document.fonts.ready.then(fitAll);
  const connected=()=>new Set(midiIns().map(prof));
 
  // ---------- smistamento dei messaggi ----------
- let wiz=null,mpkHint=false;
+ let wiz=null,mpkHint=false,ov=null;
  const prev=onMidi;
  onMidi=function(ev){
   const d=ev.data;if(!d||!d.length)return;
@@ -2668,7 +2687,7 @@ setTimeout(fitAll,600);document.fonts&&document.fonts.ready.then(fitAll);
   if(d[0]>=0xF0)return prev(ev);
   const ty=d[0]&0xf0,ch=(d[0]&15)+1,a=d[1],b=d[2];
   if(wiz&&p==='MPK'){wizMsg(ty,ch,a,b);midiAct();return;}
-  if(p==='MPK'&&!MPK&&!mpkHint){mpkHint=true;toast('MPK trovata: premi ⚙ MPK per mappare manopole e pad',4500);}
+  if(p==='MPK'&&!MPK&&!mpkHint){mpkHint=true;toast('MPK trovata: premi ? per mappare manopole e pad',4500);}
   const t=target(p);
   // MPK mappata: manopole = fila live (1–8) dello strumento, pad = 8 pad del drumpad
   if(p==='MPK'&&MPK){
@@ -2688,51 +2707,85 @@ setTimeout(fitAll,600);document.fonts&&document.fonts.ready.then(fitAll);
  const rows=[];
  function makeRow(s,host,before){
   const r=document.createElement('div');r.className='kbdrow';r.dataset.s=s;r.setAttribute('role','group');r.setAttribute('aria-label','Suona da');
-  r.innerHTML='<span class="lab">SUONA DA</span><div class="seg">'+['TUTTE',...PROFS].map(p=>'<button data-p="'+p+'">'+p+'</button>').join('')+'</div><button class="btn sm mpkmap">⚙ MPK</button>';
+  r.innerHTML='<span class="lab">SUONA DA</span><div class="seg">'+['TUTTE',...PROFS].map(p=>'<button data-p="'+p+'">'+p+'</button>').join('')+'</div><button class="btn sm kbhelp" aria-label="Mappa delle tastiere">?</button>';
   r.querySelector('.seg').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.p;
    if(p!=='TUTTE')INSTR.forEach(o=>{if(RT[o]===p)RT[o]='TUTTE';});RT[s]=p;saveRT();rowsR();
    if(p!=='TUTTE'){if(!midiAcc)midiInit(true).then(rowsR);toast(p+' suona '+({0:'il synth mono',2:'il Poli 8',3:'il basso'})[s]+(connected().has(p)?'':' (non collegata ora)'),2600);}};
-  r.querySelector('.mpkmap').onclick=()=>wizStart();
+  r.querySelector('.kbhelp').onclick=()=>mapOpen();
   if(before)host.insertBefore(r,before);else host.appendChild(r);rows.push(r);
  }
- function rowsR(){const c=connected();rows.forEach(r=>{const s=+r.dataset.s;r.querySelectorAll('.seg button').forEach(b=>{const p=b.dataset.p;b.classList.toggle('on',RT[s]===p);b.classList.toggle('conn',p!=='TUTTE'&&c.has(p));b.title=p==='TUTTE'?'Nessuna tastiera dedicata: suona lo strumento visibile':(c.has(p)?'Collegata':'Non collegata');});
-  r.querySelector('.mpkmap').classList.toggle('on',!!MPK);});}
+ function rowsR(){const c=connected();rows.forEach(r=>{const s=+r.dataset.s;r.querySelectorAll('.seg button').forEach(b=>{const p=b.dataset.p;b.classList.toggle('on',RT[s]===p);b.classList.toggle('conn',p!=='TUTTE'&&c.has(p));b.title=p==='TUTTE'?'Nessuna tastiera dedicata: suona lo strumento visibile':(c.has(p)?'Collegata':'Non collegata');});});if(ov&&ov.classList.contains('show'))mapR();}
  makeRow(0,$('#dock .tr'));
  makeRow(2,$('#ytabs').parentNode);
  makeRow(3,$('#bStop').parentNode,$('#bStop'));
  rowsR();
  setInterval(()=>{if(midiAcc)rowsR();},2000);
 
- // ---------- mappa guidata della MPK ----------
- const ov=document.createElement('div');ov.className='mpkwiz';ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Mappa MPK');
- ov.innerHTML='<div class="mw"><b>MAPPA MPK</b><p id="mwTxt"></p><div class="mwd" id="mwDots"></div><div class="mwb"><button class="btn" id="mwSkip">SALTA I PAD</button><button class="btn" id="mwCancel">ANNULLA</button></div></div>';
+
+ // ---------- schermata ? : mappa delle tastiere, e mappatura cliccando sul disegno ----------
+ ov=document.createElement('div');ov.className='kbmap';ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Mappa delle tastiere');
+ const kn=(cls,i)=>'<button class="km-k '+cls+'" data-i="'+i+'"><i>'+(i+1)+'</i><span></span></button>';
+ const pd=(cls,i)=>'<button class="km-p '+cls+'" data-i="'+i+'"><em>PAD '+(i+1)+'</em><span></span></button>';
+ const fd=i=>'<div class="km-f"><b><i></i></b><em>F'+(i+1)+'</em><span>'+(i===7?'MASTER':'—')+'</span></div>';
+ const R8=a=>Array.from({length:8},(_,i)=>a(i)).join('');
+ ov.innerHTML='<div class="km"><div class="kmh"><b>? · MAPPA DELLE TASTIERE</b><span id="kmMsg">cosa fanno adesso manopole, pad e tasti · clicca una manopola o un pad della MPK per rimapparlo</span><button class="btn" id="kmAll">MAPPA TUTTA LA MPK</button><button class="btn" id="kmClose">CHIUDI</button></div>'+
+  '<section class="kms" id="kmMPK"><div class="kmt"><b>MPK MINI</b><span class="kmc"></span><span class="kma"></span></div><div class="kmb"><div class="km-j">JOYSTICK<br>pitch / mod</div><div class="kmpads">'+R8(i=>pd('mpk',i))+'</div><div class="kmknobs">'+R8(i=>kn('mpk',i))+'</div></div><div class="kmkeys"></div></section>'+
+  '<section class="kms" id="kmSL"><div class="kmt"><b>SL 49</b><span class="kmc"></span><span class="kma"></span></div><div class="kmb"><div class="kmcol"><div class="kmknobs sl">'+R8(i=>kn('sl',i))+'</div><div class="kmpads sl">'+R8(i=>pd('sl',i))+'</div></div><div class="kmcol"><div class="kmfad">'+R8(fd)+'</div><div class="kmbtn"><span>1 · SYNTH</span><span>2 · PAD</span><span>3 · POLI 8</span><span>4 · BASSO</span></div><em class="kmnote">▲ ▼ accanto al display: programma precedente / successivo</em></div></div><div class="kmkeys"></div></section>'+
+  '<div class="kml"><span><b class="o">●</b> manopole = fila live dello strumento assegnato</span><span><b class="c">■</b> pad = drumpad, da qualunque schermata</span><span>— = libero, assegnabile con LEARN</span></div></div>';
  document.body.appendChild(ov);
- const dots=$('#mwDots');for(let i=0;i<16;i++){const d=document.createElement('i');dots.appendChild(d);}
- async function wizStart(){
-  initAudio();if(!midiAcc)await midiInit(false);
-  if(!connected().has('MPK')){toast('Non vedo la MPK: collegala con il cavo USB e riprova',4000);return;}
-  wiz={step:0,knobs:[],pads:[]};ov.classList.add('show');wizR();
+ ov.querySelectorAll('.kmkeys').forEach((k,j)=>{k.innerHTML='<i></i>'.repeat(j?29:15);});
+ const NAMES={0:'SYNTH MONO',2:'POLI 8',3:'BASSO'};
+ // le etichette della fila live dello strumento s
+ function liveLabels(s){
+  const sel=s===0?'#mlive .knob .kl':s===2?'#ylive .knob .kl':s===3?'#bknobs .knob .kl':null;
+  const a=sel?[...document.querySelectorAll(sel)].map(e=>e.textContent):[];
+  if(s===0||s===2)return R8x(i=>a[i]||'—');return R8x(i=>a[i]||'—');
  }
- function wizR(){
-  const s=wiz.step;$('#mwTxt').textContent=s<8?'Gira la manopola '+(s+1)+' della MPK':'Batti il pad '+(s-7)+' della MPK';
-  dots.querySelectorAll('i').forEach((d,i)=>{d.classList.toggle('ok',i<s);d.classList.toggle('cur',i===s);});
-  $('#mwSkip').style.visibility=s>=8?'visible':'hidden';
+ const R8x=f=>Array.from({length:8},(_,i)=>f(i));
+ function forProf(p){const t=target(p);const s=t!=null?t:(screen===1?null:screen);return{t,s};}
+ function mapR(){
+  const c=connected(),pads=curProg().pads;
+  [['MPK','#kmMPK','.mpk'],['SL','#kmSL','.sl']].forEach(([p,sec,cls])=>{
+   const S=$(sec),{t,s}=forProf(p);
+   S.querySelector('.kmc').textContent=c.has(p)?'● collegata':'○ non collegata';S.querySelector('.kmc').classList.toggle('on',c.has(p));
+   S.querySelector('.kma').innerHTML='SUONA → <b>'+(t!=null?NAMES[t]:(s!=null?NAMES[s]+' (visibile)':'strumento visibile'))+'</b>';
+   const L=s!=null?liveLabels(s):R8x(()=>'—');
+   S.querySelectorAll('.km-k').forEach((b,i)=>{const unm=p==='MPK'&&!(MPK&&MPK.knobs[i]);b.querySelector('span').textContent=unm?'non mappata':L[i];b.classList.toggle('unm',unm);});
+   S.querySelectorAll('.km-p').forEach((b,i)=>{const unm=p==='MPK'&&!(MPK&&MPK.pads[i]);b.querySelector('span').textContent=unm?'non mappato':(pads[i].name||'VUOTO');b.classList.toggle('unm',unm);});
+  });
+  ov.querySelectorAll('.km-k.mpk,.km-p.mpk').forEach(b=>{const k=b.classList.contains('km-k'),i=+b.dataset.i;b.classList.toggle('learn',!!wiz&&(k?wiz.step===i&&wiz.step<8:wiz.step===8+i));});
+  $('#kmMsg').textContent=wiz?(wiz.step<8?'Gira la manopola '+(wiz.step+1)+' della MPK':'Batti il pad '+(wiz.step-7)+' della MPK'):'cosa fanno adesso manopole, pad e tasti · clicca una manopola o un pad della MPK per rimapparlo';
+  $('#kmMsg').classList.toggle('learn',!!wiz);$('#kmAll').textContent=wiz&&!wiz.one?'SALTA I PAD':'MAPPA TUTTA LA MPK';
  }
+ let mapT=null;
+ async function mapOpen(){initAudio();if(!midiAcc)await midiInit(true);ov.classList.add('show');mapR();clearInterval(mapT);mapT=setInterval(()=>{if(ov.classList.contains('show'))mapR();},700);}
+ function mapClose(){wiz=null;ov.classList.remove('show');clearInterval(mapT);}
+ function needMPK(){if(!connected().has('MPK')){toast('Non vedo la MPK: collegala con il cavo USB e riprova',4000);return false;}return true;}
+ // mappa tutta la MPK, passo per passo, illuminando sul disegno il controllo da toccare
+ function wizStart(){if(!needMPK())return;wiz={step:0,knobs:[],pads:[]};mapR();}
+ // rimappa un solo controllo (clic sul disegno)
+ ov.addEventListener('click',e=>{const b=e.target.closest('.km-k.mpk,.km-p.mpk');if(!b||!needMPK())return;const i=+b.dataset.i,k=b.classList.contains('km-k');
+  wiz={one:true,step:k?i:8+i};mapR();});
  function wizMsg(ty,ch,a,b){
-  const s=wiz.step;
-  if(s<8){if(ty!==0xB0)return;if(wiz.knobs.some(k=>k.ch===ch&&k.cc===a))return;wiz.knobs.push({ch,cc:a});}
-  else{let e=null;if(ty===0x90&&b>0)e={t:'n',ch,note:a};else if(ty===0xB0&&b>0&&!wiz.knobs.some(k=>k.ch===ch&&k.cc===a))e={t:'c',ch,cc:a};
-   if(!e)return;if(wiz.pads.some(p=>p.t===e.t&&p.ch===e.ch&&(p.note===e.note&&p.cc===e.cc)))return;wiz.pads.push(e);}
-  wiz.step++;if(wiz.step>=16)wizEnd();else wizR();
+  const s=wiz.step,cur=MPK||{knobs:[],pads:[]};
+  const usedK=wiz.one?cur.knobs:wiz.knobs;
+  if(s<8){if(ty!==0xB0)return;if(!wiz.one&&wiz.knobs.some(k=>k.ch===ch&&k.cc===a))return;
+   const e={ch,cc:a};if(wiz.one){MPK=MPK||{knobs:[],pads:[]};MPK.knobs.forEach((k,j)=>{if(k&&k.ch===ch&&k.cc===a)MPK.knobs[j]=null;});MPK.knobs[s]=e;}else wiz.knobs.push(e);}
+  else{let e=null;if(ty===0x90&&b>0)e={t:'n',ch,note:a};else if(ty===0xB0&&b>0&&!usedK.some(k=>k&&k.ch===ch&&k.cc===a))e={t:'c',ch,cc:a};
+   if(!e)return;const same=p=>p&&p.t===e.t&&p.ch===e.ch&&p.note===e.note&&p.cc===e.cc;
+   if(wiz.one){MPK=MPK||{knobs:[],pads:[]};MPK.pads.forEach((p,j)=>{if(same(p))MPK.pads[j]=null;});MPK.pads[s-8]=e;}
+   else{if(wiz.pads.some(same))return;wiz.pads.push(e);}}
+  if(wiz.one){saveMPK();toast((s<8?'Manopola '+(s+1):'Pad '+(s-7))+' della MPK mappata ✓',2000);wiz=null;mapR();return;}
+  wiz.step++;if(wiz.step>=16)wizEnd();else mapR();
  }
- function wizEnd(){
-  MPK={knobs:wiz.knobs,pads:wiz.pads};try{localStorage.setItem('v3mpk',JSON.stringify(MPK));}catch(_){}
-  wiz=null;ov.classList.remove('show');rowsR();toast('MPK mappata: manopole → fila live, pad → drumpad',3500);
- }
- $('#mwSkip').onclick=()=>{if(wiz){wiz.step=16;wizEnd();}};
- $('#mwCancel').onclick=()=>{wiz=null;ov.classList.remove('show');toast('Annullato');};
- window.vKbd={prof,route:()=>RT,mpk:()=>MPK};
+ const saveMPK=()=>{try{localStorage.setItem('v3mpk',JSON.stringify(MPK));}catch(_){}};
+ function wizEnd(){const old=MPK||{knobs:[],pads:[]};MPK={knobs:wiz.knobs,pads:wiz.pads.length?wiz.pads:old.pads};saveMPK();wiz=null;mapR();toast('MPK mappata: manopole → fila live, pad → drumpad',3500);}
+ $('#kmAll').onclick=()=>{if(wiz&&!wiz.one){wiz.step=16;wizEnd();}else wizStart();};
+ $('#kmClose').onclick=mapClose;
+ addEventListener('keydown',e=>{if(e.key==='Escape'&&ov.classList.contains('show'))mapClose();});
+ window.vKbd={prof,route:()=>RT,mpk:()=>MPK,open:mapOpen};
 })();
+
 </script>
 <script>
 // ===== Lingua: italiano (predefinito) o inglese =====
@@ -2784,6 +2837,11 @@ setTimeout(fitAll,600);document.fonts&&document.fonts.ready.then(fitAll);
   'Nessuna tastiera dedicata: suona lo strumento visibile':'No dedicated keyboard: plays the visible instrument','Collegata':'Connected','Non collegata':'Not connected',
   'MPK trovata: premi ⚙ MPK per mappare manopole e pad':'MPK found: press ⚙ MPK to map knobs and pads','Non vedo la MPK: collegala con il cavo USB e riprova':'MPK not found: connect it with the USB cable and try again',
   'MPK mappata: manopole → fila live, pad → drumpad':'MPK mapped: knobs → live row, pads → drum pad',
+  'Mappa delle tastiere':'Keyboard map','SUONA →':'PLAYS →','strumento visibile':'visible instrument','? · MAPPA DELLE TASTIERE':'? · KEYBOARD MAP','MAPPA TUTTA LA MPK':'MAP THE WHOLE MPK','CHIUDI':'CLOSE','JOYSTICK':'JOYSTICK',
+  'cosa fanno adesso manopole, pad e tasti · clicca una manopola o un pad della MPK per rimapparlo':'what knobs, pads and buttons do now · click an MPK knob or pad to remap it',
+  'non mappata':'not mapped','non mappato':'not mapped','● collegata':'● connected','○ non collegata':'○ not connected','pitch / mod':'pitch / mod',
+  'manopole = fila live dello strumento assegnato':'knobs = live row of the assigned instrument','pad = drumpad, da qualunque schermata':'pads = drum pad, from any screen','— = libero, assegnabile con LEARN':'— = free, assignable with LEARN',
+  '▲ ▼ accanto al display: programma precedente / successivo':'▲ ▼ next to the display: previous / next program','MPK trovata: premi ? per mappare manopole e pad':'MPK found: press ? to map knobs and pads',
   // messaggi
   'Backup importato: ricarico Volante…':'Backup imported: reloading Volante…','Collegamenti MIDI azzerati':'MIDI mappings cleared','Collegamento rimosso':'Mapping removed',
   'CC 51–58 suonano i pad: sono fissi, scegli un altro controllo':'CC 51–58 play the pads: they are fixed, pick another control',
@@ -2813,7 +2871,7 @@ setTimeout(fitAll,600);document.fonts&&document.fonts.ready.then(fitAll);
   [/^PAD (\d+) ← nota (\d+) \(canale (\d+)\) ✓$/,'PAD $1 ← note $2 (channel $3) ✓'],[/^Programma (.+) salvato: (.+)$/,'Program $1 saved: $2'],
   [/^Registrazione salvata \((\d+) s, WAV dentro uno zip\)$/,'Recording saved ($1 s, WAV inside a zip)'],[/^Registrazione scaricata: (\d+) s, WAV$/,'Recording downloaded: $1 s, WAV'],
   [/^Scena (.+) salvata con gli effetti attuali$/,'Scene $1 saved with the current effects'],[/^Tastiera del computer: A = (\S+) \(ottava (.+)\)$/,'Computer keyboard: A = $1 (octave $2)'],
-  [/^Collegato: /,'Connected: '],[/^Gira la manopola (\d) della MPK$/,'Turn knob $1 on the MPK'],[/^Batti il pad (\d) della MPK$/,'Hit pad $1 on the MPK'],[/^(SL|MPK|VOX) suona (il synth mono|il Poli 8|il basso)( \(non collegata ora\))?$/,(m,k,i,n)=>k+' plays '+({'il synth mono':'the mono synth','il Poli 8':'Poli 8','il basso':'the bass'})[i]+(n?' (not connected now)':'')],[/^PROGRAMMA · (.+)$/,(m,b)=>'PROGRAM · '+({OTTONI:'BRASS',ARCHI:'STRINGS',TASTIERE:'KEYS',BASSI:'BASSES',EFFETTI:'EFFECTS'}[b]||b)],[/^Suono (\d)·(\d) salvato: (.+)$/,'Sound $1·$2 saved: $3'],[/^Passo (\d)$/,'Step $1'],[/^(.+) · SEQ (\d+) BPM · ▶ \/ spazio$/,'$1 · SEQ $2 BPM · ▶ / space'],[/^MIDI collegato: /,'MIDI connected: '],[/^Non riconosco la SL dal nome, provo su: /,'SL not recognised by name, trying: '],
+  [/^Collegato: /,'Connected: '],[/^(.+) \(visibile\)$/,'$1 (visible)'],[/^(Manopola|Pad) (\d) della MPK mappata ✓$/,(m,k,n)=>(k==='Pad'?'Pad ':'Knob ')+n+' of the MPK mapped ✓'],[/^Gira la manopola (\d) della MPK$/,'Turn knob $1 on the MPK'],[/^Batti il pad (\d) della MPK$/,'Hit pad $1 on the MPK'],[/^(SL|MPK|VOX) suona (il synth mono|il Poli 8|il basso)( \(non collegata ora\))?$/,(m,k,i,n)=>k+' plays '+({'il synth mono':'the mono synth','il Poli 8':'Poli 8','il basso':'the bass'})[i]+(n?' (not connected now)':'')],[/^PROGRAMMA · (.+)$/,(m,b)=>'PROGRAM · '+({OTTONI:'BRASS',ARCHI:'STRINGS',TASTIERE:'KEYS',BASSI:'BASSES',EFFETTI:'EFFECTS'}[b]||b)],[/^Suono (\d)·(\d) salvato: (.+)$/,'Sound $1·$2 saved: $3'],[/^Passo (\d)$/,'Step $1'],[/^(.+) · SEQ (\d+) BPM · ▶ \/ spazio$/,'$1 · SEQ $2 BPM · ▶ / space'],[/^MIDI collegato: /,'MIDI connected: '],[/^Non riconosco la SL dal nome, provo su: /,'SL not recognised by name, trying: '],
   [/^Suona sulla tastiera il pad da collegare al PAD (\d+)$/,'Play the keyboard pad to link to PAD $1'],[/^PAD (\d+) · VUOTO$/,'PAD $1 · EMPTY'],
   [/^trivella \(registrazione\)/,'trivella (recording)'],[/^suono di prova \(sintetizzato\)/,'demo sound (synthesized)'],
   [/^STAI SUONANDO: (\S+) · corda (\S+?)(, tasto (\d+)|, a vuoto)$/,(m,n,c,_x,f)=>'NOW PLAYING: '+nt(n)+' · '+NOTE[c]+' string'+(f?', fret '+f:', open')],

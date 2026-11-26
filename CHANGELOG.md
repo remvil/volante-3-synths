@@ -3,7 +3,8 @@
 ## V2.4.0 — 26/11/2026
 - Più tastiere insieme: Volante riconosce SL, MPK e Vox dal nome della porta USB.
 - Fila SUONA DA su synth mono, Poli 8 e basso (TUTTE · SL · MPK · VOX): la tastiera scelta suona sempre quello strumento, anche se sullo schermo ne vedi un altro. Ogni tastiera può essere assegnata a un solo strumento; TUTTE = segue lo strumento visibile. Un pallino verde indica le tastiere collegate.
-- ⚙ MPK: mappa guidata della MPK Mini (gira le manopole 1–8, batti i pad 1–8). Le manopole muovono la fila live dello strumento assegnato, i pad suonano gli 8 pad del drumpad da qualunque schermata.
+- Tasto ? accanto a SUONA DA: schermata con MPK Mini e SL viste dall'alto. Su ogni manopola, pad e tasto c'è scritto cosa controlla adesso e a quale strumento suona la tastiera.
+- Mappatura della MPK dalla stessa schermata: MAPPA TUTTA LA MPK illumina una alla volta le manopole 1–8 e i pad 1–8 da toccare; cliccando una singola manopola o un pad lo rimappi da solo. Le manopole muovono la fila live dello strumento assegnato, i pad suonano gli 8 pad del drumpad da qualunque schermata. La mappa resta salvata ed entra nel backup.
 - I pulsanti per cambiare strumento (CC 76–79), il master (CC 48) e i pad CC 51–58 funzionano come prima, da qualunque tastiera.
 
 ## V2.3.6 — 26/11/2026
