@@ -1,7 +1,7 @@
 {
   "name": "volante-3-synths",
   "productName": "Volante 3",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Volante 3: synth mono, drumpad, Poli 8 e basso per i live della band",
   "main": "main.js",
   "private": true,

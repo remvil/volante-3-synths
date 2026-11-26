@@ -1,5 +1,9 @@
 # Novità di Volante 3
 
+## V2.3.5 — 26/11/2026
+- Poli 8: accordatura fine (Fine) anche sull'oscillatore A.
+- Oscillatori A e B con lo stesso ordine: Freq e Fine a sinistra, levette al centro, PW e Livello a destra (STILE 800), così Freq e Fine stanno nella stessa colonna.
+
 ## V2.3.4 — 26/11/2026
 - Poli 8 STILE 800: blocchi disposti come deciso sulla tela. Colonna sinistra Osc A, Osc B, Poly-Mod, LFO-Mod; Rumore e Glide accanto a Poly-Mod e LFO-Mod; Filtro (con ADSR) e Voce affiancati sulle righe centrali; Amplificatore in basso a destra. In alto a destra resta uno spazio libero per l'arpeggiatore.
 - Tastierino dei programmi su 3 colonne, tasti più grandi.
