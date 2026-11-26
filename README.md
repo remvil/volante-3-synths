@@ -59,6 +59,8 @@ I suoni salvati nella versione browser non passano da soli nell'app: esporta il 
 
 `Volante 3 Vmaggiore.minore.correzione`: le correzioni piccole alzano l'ultimo numero (V2.0.1), le novità quello di mezzo (V2.1.0), un cambio completo il primo (V3.0.0).
 
+Cosa viene dopo: vedi [ROADMAP.md](ROADMAP.md).
+
 ## Come lavoriamo (rami e versioni)
 
 | Ramo | A cosa serve |
