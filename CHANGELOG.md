@@ -1,5 +1,9 @@
 # Novità di Volante 3
 
+## V2.3.2 — 26/11/2026
+- Poli 8 STILE V: Filtro (Taglio, Risonanza, Inviluppo, Tastiera, Rumore) e Amplificatore (Attacco, Decad., Sostegno, Rilascio, Volume) su una riga ciascuno; LFO più stretto.
+- Pulsanti di Poly-Mod e LFO allineati in colonne: forme d'onda sopra, destinazioni sotto, scritte centrate senza la freccia.
+
 ## V2.3.1 — 26/11/2026
 - Poli 8: la vista "STILE 5" si chiama ora STILE V.
 - STILE V senza la sezione Mixer: i livelli Osc A e Osc B sono dentro i loro oscillatori, il Rumore è nel Filtro (entra prima del filtro, come sul Prophet).
