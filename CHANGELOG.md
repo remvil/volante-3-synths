@@ -1,5 +1,9 @@
 # Novità di Volante 3
 
+## V2.3.4 — 26/11/2026
+- Poli 8 STILE 800: blocchi disposti come deciso sulla tela. Colonna sinistra Osc A, Osc B, Poly-Mod, LFO-Mod; Rumore e Glide accanto a Poly-Mod e LFO-Mod; Filtro (con ADSR) e Voce affiancati sulle righe centrali; Amplificatore in basso a destra. In alto a destra resta uno spazio libero per l'arpeggiatore.
+- Tastierino dei programmi su 3 colonne, tasti più grandi.
+
 ## V2.3.3 — 26/11/2026
 - Poli 8 STILE 800: disposizione come sul Pro-800. In alto Oscillatore A e B; sotto Poly-Mod, Rumore e Filtro (con il suo inviluppo dentro lo stesso riquadro); in fondo LFO-Mod, Glide e Amplificatore.
 - Glide in un riquadro suo sotto il Rumore; Voce (Detune, Velocity, Bend, Eco) nello spazio in alto a destra invece che su tutta la larghezza.
