@@ -1,5 +1,12 @@
 # Novità di Volante 3
 
+## V2.3.0 — 26/11/2026
+- Poli 8, vista Mac: due stili di pannello, con il tasto STILE 5 / STILE 800 in alto (la scelta resta salvata).
+- STILE 5 (ispirato al Prophet-5): sezioni in fila (Poly-Mod, LFO, Oscillatori, Mixer, Filtro, Amplificatore), pulsanti crema con LED rosso, fila dei programmi con 5 banchi e 8 tasti grandi, SALVA, SALVA IN… e FABBRICA sempre a vista.
+- STILE 800 (ispirato al Pro-800): blocco programmi con display rosso (A-3 = banco A, programma 3) e tastierino 1–8, riquadri arrotondati con il titolo sul bordo, levette, livelli degli oscillatori nei loro riquadri, fascia VOCE per i comandi in più.
+- Motore: triangolo anche sull'oscillatore A; inviluppo del filtro bipolare (sotto lo zero chiude il filtro).
+- Corretto: con SALVA IN… il nome scritto non veniva più cancellato prima di salvare.
+
 ## V2.2.0 — 26/11/2026
 - Volante-3 mono, vista Mac: pannello nero in stile synth anni '70, con le sezioni da sinistra a destra e il nome sotto (Controlli, Oscillatori, Mixer, Modificatori, Uscita, Ritmo), pannello leggermente inclinato.
 - Mixer come sugli strumenti originali: interruttori colorati e livelli dei tre oscillatori spostati nel mixer (solo vista Mac).
