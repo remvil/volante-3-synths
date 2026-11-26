@@ -1,0 +1,31 @@
+{
+  "name": "volante-3-synths",
+  "productName": "Volante 3",
+  "version": "2.1.0",
+  "description": "Volante 3: synth mono, drumpad, Poli 8 e basso per i live della band",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac dmg",
+    "dist:zip": "electron-builder --mac zip"
+  },
+  "devDependencies": {
+    "electron": "^45.5.0",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "it.volante.synth",
+    "productName": "Volante 3",
+    "files": ["main.js", "app/**/*", "package.json"],
+    "directories": { "output": "dist", "buildResources": "build" },
+    "mac": {
+      "category": "public.app-category.music",
+      "icon": "build/icon.png",
+      "target": ["dmg"],
+      "identity": null,
+      "extendInfo": { "NSMicrophoneUsageDescription": "Volante non usa il microfono." }
+    },
+    "dmg": { "title": "Volante 3 ${version}" }
+  }
+}
