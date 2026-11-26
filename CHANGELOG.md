@@ -1,5 +1,10 @@
 # Novità di Volante 3
 
+## V2.3.1 — 26/11/2026
+- Poli 8: la vista "STILE 5" si chiama ora STILE V.
+- STILE V senza la sezione Mixer: i livelli Osc A e Osc B sono dentro i loro oscillatori, il Rumore è nel Filtro (entra prima del filtro, come sul Prophet).
+- Il volume del Poli 8 è passato da Voce all'Amplificatore (anche in STILE 800); la fascia Voce sta su una riga. Il fader MASTER in alto resta il volume di tutti gli strumenti.
+
 ## V2.3.0 — 26/11/2026
 - Poli 8, vista Mac: due stili di pannello, con il tasto STILE 5 / STILE 800 in alto (la scelta resta salvata).
 - STILE 5 (ispirato al Prophet-5): sezioni in fila (Poly-Mod, LFO, Oscillatori, Mixer, Filtro, Amplificatore), pulsanti crema con LED rosso, fila dei programmi con 5 banchi e 8 tasti grandi, SALVA, SALVA IN… e FABBRICA sempre a vista.
