@@ -58,3 +58,22 @@ I suoni salvati nella versione browser non passano da soli nell'app: esporta il 
 ## Versioni
 
 `Volante 3 Vmaggiore.minore.correzione`: le correzioni piccole alzano l'ultimo numero (V2.0.1), le novità quello di mezzo (V2.1.0), un cambio completo il primo (V3.0.0).
+
+## Come lavoriamo (rami e versioni)
+
+| Ramo | A cosa serve |
+|---|---|
+| `feature/nome-novita` | Un ramo per ogni novità, per esempio `feature/mono-ui-minimoog` |
+| `development` | Raccoglie le novità finite: è la versione da provare giorno per giorno |
+| `test` | Versione candidata da collaudare con calma, per esempio alle prove |
+| `main` | Versione da palco: ogni rilascio ha il suo tag, per esempio `v2.2.0` |
+
+Il percorso è sempre `feature/…` → `development` → `test` → `main` (+ tag).
+
+Per provare un ramo sul Mac:
+```
+git checkout development   # oppure test, oppure main
+git pull
+npm start
+```
+Per tornare a una versione precisa: `git checkout v2.1.0`.
