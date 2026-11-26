@@ -3,6 +3,7 @@
   "productName": "Volante 3",
   "version": "2.4.0",
   "description": "Volante 3: synth mono, drumpad, Poli 8 e basso per i live della band",
+  "author": "remvil",
   "main": "main.js",
   "private": true,
   "scripts": {
